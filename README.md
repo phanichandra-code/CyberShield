@@ -1,118 +1,39 @@
-# CyberShield
+# 🛡️ CyberShield SOC
 
-## Network Security Monitoring & Threat Detection System
+### Network Security Monitoring & Threat Detection System
 
-CyberShield is a Python-based cybersecurity monitoring system that analyzes simulated security logs, detects suspicious activity, generates security alerts, stores them in MySQL, and displays the results through a Streamlit SOC dashboard.
+CyberShield is a Python-based Security Operations Center (SOC) monitoring system designed to analyze simulated security logs, detect suspicious activities, generate security alerts, store them in MySQL, and visualize them through an interactive Streamlit dashboard.
 
-## Key Features
+> **Note:** This project uses simulated security events for educational and portfolio purposes. It does not perform real-world attacks or network scanning.
 
-- Brute-force login detection
-- Port-scan detection
-- High-volume request detection
-- Security alert generation
-- Severity classification
-- MySQL alert storage
-- SOC-style dashboard
-- Alert filtering
-- Source IP analysis
-- Security event visualization
-- Automated detection testing
+---
 
-## Technologies Used
+## 🎯 Project Objective
 
-- Python
-- MySQL
-- Streamlit
-- Git
-- GitHub
-- Python-dotenv
+The main objective of CyberShield is to demonstrate how a basic Security Operations Center monitoring workflow can be implemented using Python, MySQL, and Streamlit.
 
-## Detection Rules
+The system:
 
-### 1. Brute Force Detection
+1. Reads security event logs.
+2. Parses individual security events.
+3. Analyzes events using detection rules.
+4. Identifies suspicious activity.
+5. Generates alerts with severity levels.
+6. Stores alerts in MySQL.
+7. Displays security information through a SOC dashboard.
+8. Tests detection logic using automated test cases.
 
-Detects repeated failed login attempts from the same IP within a defined time window.
+---
 
-Threshold:
+## 🚨 Security Threats Detected
 
-5 failed login attempts within 60 seconds.
+### 🔐 1. Brute-Force Detection
 
-### 2. Port Scan Detection
+Detects repeated failed login attempts from the same IP address.
 
-Detects multiple different ports being accessed by the same IP within a short time period.
+**Rule:**
 
-Threshold:
-
-5 different ports within 60 seconds.
-
-### 3. High-Volume Activity Detection
-
-Detects unusually high request activity from the same IP.
-
-Threshold:
-
-10 requests within 60 seconds.
-
-## Architecture
-
-Security Logs
-↓
-Log Processing
-↓
-Threat Detection
-↓
-Alert Manager
-↓
-MySQL Database
-↓
-Streamlit SOC Dashboard
-
-## Project Structure
-
-CyberShield/
-├── logs/
-├── src/
-├── database/
-├── dashboard/
-├── tests/
-├── requirements.txt
-├── .gitignore
-└── README.md
-
-## How to Run
-
-### Install dependencies
-
-pip install -r requirements.txt
-
-### Run threat detection
-
-python src/main.py
-
-### Run dashboard
-
-python -m streamlit run dashboard/app.py
-
-## Testing
-
-The project includes positive and negative test cases for:
-
-- Brute-force detection
-- Port-scan detection
-- High-volume activity detection
-- Normal login activity
-- Normal port activity
-- Normal request activity
-
-## Security Note
-
-This project uses simulated security logs for educational and demonstration purposes. It does not perform real attacks or interact with external systems.
-
-## Future Enhancements
-
-- Machine learning based anomaly detection
-- Real-time log monitoring
-- Email security alerts
-- IP reputation analysis
-- Authentication log integration
-- Advanced SOC analytics
+```text
+5 or more failed login attempts
+within 60 seconds
+→ Brute Force Alert

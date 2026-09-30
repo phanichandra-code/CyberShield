@@ -37,11 +37,3 @@ Detects repeated failed login attempts from the same IP address.
 5 or more failed login attempts
 within 60 seconds
 → Brute Force Alert
-
-## 📊 SOC Dashboard
-
-The Streamlit dashboard provides a simple SOC-style monitoring interface.
-
-### Dashboard Preview
-
-![CyberShield SOC Dashboard](screenshots/cyberShield-dashboard.png)
